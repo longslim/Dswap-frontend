@@ -125,7 +125,7 @@ const Signup = () => {
 
 
     try {
-      const res = await axios.post("https://dswap-backend.onrender.com", formData, {
+      const res = await axios.post("https://dswap-backend.onrender.com/api/v1", formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       if (res.data.success) {
