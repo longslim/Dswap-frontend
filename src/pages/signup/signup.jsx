@@ -126,9 +126,7 @@ const Signup = () => {
 
 
     try {
-      const res = await api.post("/signup-user", formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      const res = await api.post("/signup-user", formData);
       if (res.data.success) {
         setMessage({ text: res.data.message, type: "success"});
         setTimeout (() => navigate("/login"), 2000);
