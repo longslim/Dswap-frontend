@@ -3,6 +3,7 @@ import "./signup.css"
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from 'axios';
+import api from '../../components/axiosInstance';
 
 const reducer = (state, action) => {
   switch(action.type) {
@@ -125,7 +126,7 @@ const Signup = () => {
 
 
     try {
-      const res = await axios.post("https://dswap-backend.onrender.com/api/v1", formData, {
+      const res = await api.post("/signup-user", formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       if (res.data.success) {
