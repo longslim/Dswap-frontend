@@ -1,0 +1,67 @@
+.result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+  }
+  
+  .result-box {
+    width: 360px;
+    background: #fff;
+    padding: 30px 35px;
+    text-align: center;
+    border-radius: 18px;
+    animation: pop 0.25s ease-out;
+  }
+  
+  .result-box.success {
+    border-top: 7px solid #2ecc71;
+  }
+  
+  .result-box.error {
+    border-top: 7px solid #e74c3c;
+  }
+  
+  .result-icon {
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    font-size: 70px;
+  }
+  
+  .success-icon {
+    color: #2ecc71;
+  }
+  
+  .error-icon {
+    color: #e74c3c;
+  }
+  
+  .close-btn {
+    margin-top: 18px;
+    padding: 10px 22px;
+    background: #0047ab;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0.85);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  

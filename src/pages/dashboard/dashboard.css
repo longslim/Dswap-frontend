@@ -1,0 +1,294 @@
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    background: #f7f9fb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+  
+  
+.balance {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  
+.balance .available {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.balance .available h6 {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+  
+.balance .money {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+} 
+  
+.balance .money  {
+    font-size: 26px;
+    font-weight: 600;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} 
+
+
+
+.avail {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    
+}
+  
+.avail h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+  
+.toggle_i {
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: color 0.2s ease;
+    margin-right: 130px;
+    padding-top: 5px;
+}
+  
+.toggle_i:hover {
+    color: #000;
+}
+  
+  
+.add {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+  
+.add:hover {
+    background: #0056b3;
+}
+  
+  
+.transactions {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  
+.transactions h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+  
+.transactions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.transactions li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+  
+.transactions li:last-child {
+    border-bottom: none;
+}
+  
+.tx-info {
+    display: flex;
+    flex-direction: column;
+}
+  
+.tx-type {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+  
+.tx-amount {
+    font-size: 15px;
+    color: #007bff;
+    margin-top: 3px;
+}
+  
+.tx-date {
+    font-size: 13px;
+    color: #777;
+}
+  
+.no-tx {
+    color: #666;
+    text-align: center;
+    margin-top: 15px;
+}
+  
+
+.tx-type.external-tx {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.transaction-item {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.transaction-item:hover {
+  background: #f8f8f8;
+}
+
+.tx-type.external-tx {
+  color: #007bff;
+  font-weight: 600;
+}
+
+
+ 
+.banks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+  
+.banks div {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+  
+.banks div:hover {
+    background: #007bff;
+    color: #fff;
+    transform: translateY(-4px);
+}
+  
+.banks svg {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+  
+  
+.loading,
+.message {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+}
+  
+  
+  
+  
+@media (max-width: 768px) {
+    .balance {
+      padding: 15px;
+    }
+  
+    .balance .money p {
+      font-size: 22px;
+    }
+  
+    .transactions h4 {
+      font-size: 16px;
+    }
+  
+    .banks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+  
+  
+@media (max-width: 600px) {
+    .dashboard {
+      padding: 15px;
+    }
+  
+    .balance .available h6 {
+      font-size: 13px;
+    }
+  
+    .balance .money p {
+      font-size: 20px;
+    }
+  
+    .add {
+      padding: 6px 10px;
+    }
+  
+    .transactions li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  
+    .banks {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+}
+  
+  
+@media (max-width: 480px) {
+    .balance .available {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    .balance .money {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .balance .money p {
+      font-size: 18px;
+    }
+  
+    .transactions h4 {
+      font-size: 15px;
+    }
+  
+    .banks {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .banks h5 {
+      font-size: 13px;
+    }
+}
+  

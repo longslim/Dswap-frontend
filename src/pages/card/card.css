@@ -1,0 +1,60 @@
+.card-page {
+    padding: 20px;
+  }
+  
+  .virtual-card {
+    background: #00b894;
+    padding: 25px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 8px 20px;
+  }
+  
+  .virtual-card .masked {
+    font-size: 20px;
+    margin: 10px 0;
+    letter-spacing: 3px;
+  }
+  
+  .show-btn {
+    padding: 10px 15px;
+    border: none;
+    background: white;
+    color: #00b894;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .full-details-box {
+    margin-top: 20px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+
+  .copy-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+  }
+  
+  .copy-btn {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .copy-btn:hover {
+    opacity: 0.8;
+  }
+  
+  

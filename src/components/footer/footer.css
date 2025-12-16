@@ -1,0 +1,30 @@
+.foot{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.foot > div {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .foot > div:hover {
+    transform: translateY(-4px);
+  }
+  
+  .foot svg {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .foot h6 {
+    margin-top: 8px;
+    font-size: 10px;
+  }

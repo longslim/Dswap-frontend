@@ -1,0 +1,105 @@
+.loan-container {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .loan-form input,
+  .loan-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .loan-form button {
+    width: 100%;
+    padding: 14px;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .loan-status-box {
+    margin-top: 20px;
+    padding: 18px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .btc-box {
+    margin-top: 15px;
+    background: #333;
+    padding: 15px;
+    border-radius: 6px;
+  }
+  
+  .btc-address {
+    display: block;
+    background: #222;
+    color: #0f0;
+    padding: 10px;
+  }
+  
+  .processing {
+    color: orange;
+  }
+  
+  .approved {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .rejected {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.copy-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+  }
+  
+  .copy-btn {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .copy-btn:hover {
+    opacity: 0.8;
+  }
+
+
+  .msg-box {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .msg-box.success {
+    background: #d4f8d4;
+    color: #0c7a0c;
+  }
+  
+  .msg-box.error {
+    background: #ffd6d6;
+    color: #b30000;
+  }
+  
+  

@@ -1,0 +1,147 @@
+.finance_container {
+    width: 100%;
+    max-height: 100vh;
+    background: #eee;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  /* Chart Section */
+  .finance_chart {
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Buttons Container */
+  .finance_contain {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 10px;
+  }
+  
+  /* Each Action Box */
+  .finance_receive,
+  .finance_send,
+  .finance_purchase {
+    width: 200px;
+    height: 100px;
+    background: #1a1a1a;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 100, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .finance_send {
+    box-shadow: 0px 0px 10px rgba(255, 80, 50, 0.1);
+  }
+  
+  .finance_receive:hover,
+  .finance_send:hover,
+  .finance_purchase:hover {
+    transform: translateY(-5px);
+    background: #222;
+  }
+  
+  .finance_receive svg,
+  .finance_send svg,
+  .finance_purchase svg {
+    font-size: 40px;
+  }
+  
+  .finance_receive h3,
+  .finance_send h3,
+  .finance_purchase h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  /* =======================
+     RESPONSIVE BREAKPOINTS
+     ======================= */
+  
+  /* ---- 768px ---- */
+  @media (max-width: 768px) {
+    .finance_contain {
+      gap: 15px;
+    }
+  
+    .finance_receive,
+    .finance_send,
+    .finance_purchase {
+      width: 170px;
+      height: 120px;
+    }
+  
+    .finance_receive svg,
+    .finance_send svg,
+    .finance_purchase svg {
+      font-size: 34px;
+    }
+  
+    .finance_receive h3,
+    .finance_send h3,
+    .finance_purchase h3 {
+      font-size: 15px;
+    }
+  }
+  
+  /* ---- 600px ---- */
+  @media (max-width: 600px) {
+    .finance_contain {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+  
+    .finance_receive,
+    .finance_send,
+    .finance_purchase {
+      width: 90%;
+      max-width: 350px;
+      height: 120px;
+    }
+  }
+  
+  /* ---- 480px ---- */
+  @media (max-width: 480px) {
+    .finance_container {
+      padding-bottom: 80px;
+    }
+  
+    .finance_receive,
+    .finance_send,
+    .finance_purchase {
+      height: 110px;
+      gap: 10px;
+    }
+  
+    .finance_receive svg,
+    .finance_send svg,
+    .finance_purchase svg {
+      font-size: 30px;
+    }
+  
+    .finance_receive h3,
+    .finance_send h3,
+    .finance_purchase h3 {
+      font-size: 14px;
+    }
+  }
+   

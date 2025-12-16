@@ -1,0 +1,489 @@
+/* ====== Base Layout ====== */
+.admin-dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f9fafb;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
+  
+  /* ====== Header ====== */
+  .admin-header {
+    width: 100%;
+    background-color: #1f2937;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .admin-header h2 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  
+  .header-buttons button {
+    margin-left: 0.8rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .header-buttons button:hover {
+    background: #1d4ed8;
+  }
+  
+  /* ====== Section Containers ====== */
+  section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 900px;
+  }
+  
+  /* ====== Forms ====== */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  form input:focus {
+    border-color: #2563eb;
+  }
+  
+  form button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* ====== Messages ====== */
+  .message {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+  
+  .message.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+  
+  /* ====== Tables ====== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+  }
+  
+  tr:hover {
+    background-color: #f9fafb;
+  }
+  
+  td button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  td button:first-child {
+    background-color: #22c55e;
+    color: white;
+  }
+  
+  td button:first-child:hover {
+    background-color: #16a34a;
+  }
+  
+  td button:last-child {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  td button:last-child:hover {
+    background-color: #dc2626;
+  }
+  
+  /* ====== Logout Button ====== */
+  .logout-container {
+    margin-top: 3rem;
+  }
+
+
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .spinner {
+    border: 5px solid #e0e0e0;
+    border-top: 5px solid #00509e;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-text {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #002855;
+  }
+
+
+  .btc-admin-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    background: #ffffff;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.btc-admin-wrapper h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+/* BTC Stats Grid */
+.btc-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btc-box {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 1.4rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.btc-box:hover {
+    transform: translateY(-3px);
+}
+
+.btc-box h3 {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.btc-box .amount {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btc-box small {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* BTC Table */
+.btc-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+.btc-table thead {
+    background: #f1f5f9;
+}
+
+.btc-table th {
+    padding: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.btc-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.btc-table tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Approve / Reject Buttons */
+.approve-btn {
+    background-color: #22c55e !important;
+    color: white;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.approve-btn:hover {
+    background-color: #16a34a !important;
+}
+
+.reject-btn {
+    background-color: #ef4444 !important;
+    color: white;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.reject-btn:hover {
+    background-color: #dc2626 !important;
+}
+
+/* Loading Spinner for BTC Buttons */
+.approve-btn:disabled,
+.reject-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  
+  /* ====== Media Queries ====== */
+  
+  /* Tablets (≤ 768px) */
+  @media (max-width: 768px) {
+    .admin-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-buttons {
+      margin-top: 1rem;
+    }
+  
+    section {
+      width: 95%;
+      padding: 1rem;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+
+    .btc-admin-wrapper {
+      padding: 1.5rem;
+      width: 95%;
+  }
+
+  .btc-admin-wrapper h2 {
+      font-size: 1.4rem;
+  }
+
+  .btc-stats-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .btc-box {
+      padding: 1.1rem;
+  }
+
+  .btc-box .amount {
+      font-size: 1.6rem;
+  }
+
+  .btc-table th,
+  .btc-table td {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+  }
+  }
+  
+  /* Mobile Medium (≤ 600px) */
+  @media (max-width: 600px) {
+    .admin-header h2 {
+      font-size: 1.3rem;
+    }
+  
+    .header-buttons button {
+      margin: 0.3rem 0.3rem 0 0;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    table th, table td {
+      padding: 0.6rem;
+    }
+  
+    form input, form button {
+      padding: 0.6rem;
+    }
+
+    .btc-admin-wrapper {
+      padding: 1.3rem;
+      border-radius: 8px;
+  }
+
+  .btc-box {
+      padding: 1rem;
+  }
+
+  .btc-box .amount {
+      font-size: 1.4rem;
+  }
+
+  .btc-table {
+      font-size: 0.85rem;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+  }
+  
+  /* Mobile Small (≤ 480px) */
+  @media (max-width: 480px) {
+    .admin-header {
+      padding: 1rem;
+    }
+  
+    .admin-header h2 {
+      font-size: 1.1rem;
+    }
+  
+    .header-buttons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .header-buttons button {
+      flex: 1;
+      margin: 0.3rem;
+      font-size: 0.9rem;
+    }
+  
+    table {
+      font-size: 0.85rem;
+      overflow-x: auto;
+      display: block;
+    }
+  
+    section {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .btc-admin-wrapper {
+      padding: 1rem;
+      width: 98%;
+  }
+
+  .btc-admin-wrapper h2 {
+      font-size: 1.2rem;
+      text-align: center;
+  }
+
+  .btc-stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+  }
+
+  .btc-box {
+      padding: 0.9rem;
+      border-radius: 10px;
+  }
+
+  .btc-box h3 {
+      font-size: 0.9rem;
+  }
+
+  .btc-box .amount {
+      font-size: 1.4rem;
+  }
+
+  .approve-btn,
+  .reject-btn {
+      padding: 0.45rem 0.7rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+  }
+  }
+  

@@ -1,0 +1,129 @@
+/* ===========================
+   BASE STYLING
+=========================== */
+.buyContainer {
+    width: 100%;
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #111827; /* dark navy */
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buyContainer h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #f3f4f6;
+    font-weight: 600;
+  }
+  
+  .buyContainer input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+    background: #1f2937;
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+  
+  .buyContainer input:focus {
+    border-color: #10b981; /* green highlight */
+  }
+  
+  .buyContainer button {
+    width: 100%;
+    padding: 14px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+  }
+  
+  .buyContainer button:hover {
+    background: #0fa673;
+  }
+  
+  .buyContainer button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  
+  
+  /* ===========================
+     BREAKPOINT: 768px
+  =========================== */
+  @media (max-width: 768px) {
+    .buyContainer {
+      max-width: 430px;
+      padding: 25px;
+    }
+  
+    .buyContainer h2 {
+      font-size: 1.5rem;
+    }
+  
+    .buyContainer input,
+    .buyContainer button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  
+  
+  /* ===========================
+     BREAKPOINT: 600px
+  =========================== */
+  @media (max-width: 600px) {
+    .buyContainer {
+      max-width: 380px;
+      padding: 22px;
+    }
+  
+    .buyContainer h2 {
+      font-size: 1.4rem;
+    }
+  
+    .buyContainer input,
+    .buyContainer button {
+      font-size: 0.95rem;
+      padding: 12px;
+    }
+  }
+  
+  
+  /* ===========================
+     BREAKPOINT: 480px
+  =========================== */
+  @media (max-width: 480px) {
+    .buyContainer {
+      max-width: 90%;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  
+    .buyContainer h2 {
+      font-size: 1.3rem;
+    }
+  
+    .buyContainer input,
+    .buyContainer button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  

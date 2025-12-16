@@ -1,0 +1,68 @@
+.external-transfer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .external-transfer-card {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .external-transfer-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .external-transfer-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .external-transfer-card input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .external-transfer-card button {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    
+  }
+  
+  .external-transfer-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .message.success {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .message.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .linked-info {
+    background: #f6f8ff;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  

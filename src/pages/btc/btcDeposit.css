@@ -1,0 +1,177 @@
+.btcDepositBox {
+    max-width: 520px;
+    margin: 40px auto;
+    background: #0d0d0d;
+    padding: 25px;
+    border-radius: 18px;
+    color: white;
+    border: 1px solid #222;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btcPrice {
+    background: #1c1c1c;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+  
+  .refreshBtn {
+    background: #333;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .refreshBtn:hover {
+    background: #555;
+  }
+  
+  .balanceBox {
+    margin-top: 20px;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .balanceBox .label {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  .balanceBox .value {
+    font-size: 16px;
+    color: #4caf50;
+  }
+  
+  .addressLabel {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  
+  .addressBox {
+    background: #1a1a1a;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    word-break: break-all;
+  }
+  
+  .copyBtn {
+    background: #444;
+    padding: 7px 14px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .copyBtn:hover {
+    background: #666;
+  }
+  
+  .qrWrapper {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 0 auto 15px auto;
+    width: 200px;
+  }
+  
+  .refId {
+    text-align: center;
+    color: #bbb;
+    margin-top: 10px;
+  }
+  
+  .infoNote {
+    text-align: center;
+    margin-top: 10px;
+    color: #ffa500;
+  }
+  
+  .loading {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  /* ============= TABLET 768px ============= */
+  @media (max-width: 768px) {
+    .btcDepositBox {
+      max-width: 90%;
+      padding: 20px;
+    }
+  
+    .balanceBox {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+  
+  /* ============= MID DEVICES 600px ============= */
+  @media (max-width: 600px) {
+    .title {
+      font-size: 22px;
+    }
+  
+    .addressBox {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .topRow {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .qrWrapper {
+      width: 170px;
+    }
+  }
+  
+  /* ============= SMALL MOBILE 480px ============= */
+  @media (max-width: 480px) {
+    .btcDepositBox {
+      padding: 16px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .copyBtn,
+    .refreshBtn {
+      width: 100%;
+    }
+  
+    .qrWrapper {
+      width: 150px;
+    }
+  }
+  

@@ -1,0 +1,120 @@
+.withdrawContainer {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #111;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .withdrawContainer input {
+    width: 95%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1b1b1b;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .withdrawContainer button {
+    width: 100%;
+    padding: 14px;
+    background: #ffae00;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .currency-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    gap: 10px;
+  }
+  
+  .currency-switch button {
+    width: 50px;
+    height: 50px;
+    background: #222;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+  }
+  
+  .currency-switch button.active {
+    background: #ffae00;
+    color: black;
+  }
+
+.value{
+    color: #4caf50; 
+}
+  
+  .switch-arrow {
+    font-size: 24px;
+    opacity: 0.7;
+  }
+  
+  /* 768px */
+  @media (max-width: 768px) {
+    .withdrawContainer {
+      max-width: 420px;
+      padding: 18px;
+    }
+  
+    .currency-switch button {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+  }
+  
+  /* 600px */
+  @media (max-width: 600px) {
+    .withdrawContainer {
+      max-width: 380px;
+      padding: 16px;
+    }
+  
+    .withdrawContainer input {
+      padding: 10px;
+    }
+  
+    .withdrawContainer button {
+      font-size: 16px;
+    }
+  }
+  
+  /* 480px */
+  @media (max-width: 480px) {
+    .withdrawContainer {
+      max-width: 95%;
+      padding: 14px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    .currency-switch {
+      gap: 6px;
+    }
+  
+    .currency-switch button {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  
+    .withdrawContainer input {
+      font-size: 15px;
+    }
+  }
+  
