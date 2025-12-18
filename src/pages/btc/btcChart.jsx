@@ -39,29 +39,31 @@ const BtcChart = () => {
   }, []);
 
   return (
-    <div style={{ width: "100%", height: "350px", marginTop: "20px" }}>
-      <h3 style={{ marginBottom: "10px" }}>Bitcoin Price Chart (Line)</h3>
+        <div style={{ width: "100%", height: "350px", marginTop: "20px" }}>
+      <h3 style={{ marginBottom: "10px" }}>
+        Bitcoin Price Chart (Line)
+      </h3>
 
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-
-          <XAxis dataKey="time" />
-          <YAxis domain={["auto", "auto"]} />
-
-          <Tooltip />
-
-          <Line
-            type="monotone"
-            dataKey="price"
-            stroke="#ff9900"
-            strokeWidth={2}
-            dot={false}
-            isAnimationActive={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+      {data.length > 0 && (
+        <ResponsiveContainer width="100%" height={300}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
+            <XAxis dataKey="time" />
+            <YAxis domain={["auto", "auto"]} />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="price"
+              stroke="#ff9900"
+              strokeWidth={2}
+              dot={false}
+              isAnimationActive={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      )}
     </div>
+
   );
 };
 
