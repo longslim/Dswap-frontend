@@ -17,14 +17,14 @@ const Card = () => {
       const res = await api.get("/masked");
       setMaskedCard(res.data.cardNumber);
     } catch (err) {
-      console.log("Error fetching card", err);
+      //console.log("Error fetching card", err);
     }
   };
 
   return (
     <div className="card-page">
 
-      {/* CARD UI */}
+      
       <div className="virtual-card">
         <h3>Card</h3>
         <p className="masked">{maskedCard}</p>
@@ -34,7 +34,7 @@ const Card = () => {
         </button>
       </div>
 
-      {/* PIN INPUT MODAL */}
+      
       {showPinModal && (
         <PinModal
           onClose={() => setShowPinModal(false)}
@@ -45,7 +45,7 @@ const Card = () => {
         />
       )}
 
-      {/* FULL DETAILS SECTION */}
+      
       {fullDetails && (
         <div className="full-details-box">
         <h3>Card Details</h3>

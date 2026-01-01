@@ -2,7 +2,7 @@ import React, { useReducer, useState } from "react";
 import "./updatePassword.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import api from "../../components/axiosInstance";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -40,10 +40,9 @@ const UpdatePassword = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post(
-        `http://localhost:5000/api/v1/update-password/${id}/${token}`,
-        { newPassword: state.newPassword },
-        { headers: { "Content-Type": "application/json" } }
+      const res = await api.post(
+        `/update-password/${id}/${token}`,
+        { newPassword: state.newPassword }
       );
 
       if (res.data.success) {

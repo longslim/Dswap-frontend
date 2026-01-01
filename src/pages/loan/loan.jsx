@@ -20,7 +20,7 @@ const Loan = () => {
       const res = await api.get("/loan-status");
       setLoan(res.data.loan);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -42,7 +42,7 @@ const Loan = () => {
       setMessage({ text: "Loan request submitted", type: "success" });
       setLoading(false);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Failed to apply for loan", type: "error" });
       setLoading(false);
     }
@@ -66,7 +66,7 @@ const Loan = () => {
 
       setSendingTx(false);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Error submitting proof", type: "error" });
       setSendingTx(false);
     }

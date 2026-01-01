@@ -8,13 +8,13 @@ const BtcPurchase = () => {
   const [usdAmount, setUsdAmount] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔥 Modal States
+  
   const [showModal, setShowModal] = useState(false);
   const [resultOpen, setResultOpen] = useState(false);
   const [resultType, setResultType] = useState("success");
   const [resultMessage, setResultMessage] = useState("");
 
-  // 🔥 Step 1: User clicks Buy → show confirm modal
+  
   const handleBuyClick = () => {
     if (!usdAmount || Number(usdAmount) <= 0) {
       setResultType("error");
@@ -25,7 +25,7 @@ const BtcPurchase = () => {
     setShowModal(true);
   };
 
-  // 🔥 Step 2: Confirm Purchase → Create Coinbase Charge
+  
   const handleConfirmTransfer = async () => {
     setLoading(true);
 
@@ -35,11 +35,11 @@ const BtcPurchase = () => {
       setShowModal(false);
       setLoading(false);
 
-      // Redirect to Coinbase hosted checkout
+     
       window.location.href = res.data.hosted_url;
 
     } catch (err) {
-      console.error(err);
+      //console.error(err);
 
       setShowModal(false);
       setLoading(false);
@@ -64,7 +64,7 @@ const BtcPurchase = () => {
         {loading ? "Loading..." : "Buy BTC"}
       </button>
 
-      {/* 🔥 Confirm Modal */}
+      
       <ConfirmModal
         isOpen={showModal}
         title="Confirm Purchase"
@@ -76,7 +76,7 @@ const BtcPurchase = () => {
         loading={loading}
       />
 
-      {/* 🔥 Result Modal */}
+      
       <ResultModal
         isOpen={resultOpen}
         type={resultType}

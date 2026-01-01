@@ -101,7 +101,7 @@ const History = ({ user }) => {
   if (message.text)
     return <p className={`message ${message.type}`}>{message.text}</p>;
 
-  // Paginate merged data client-side
+  
   const startIdx = (filters.page - 1) * filters.limit;
   const endIdx = startIdx + filters.limit;
   const displayedTransactions = transactions.slice(startIdx, endIdx);

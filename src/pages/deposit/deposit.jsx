@@ -39,7 +39,7 @@ const Deposit = () => {
     backCheque: null,
   });
 
-  // 🏦 Card Deposit Handler
+  
   const handleCardDeposit = async (e) => {
     e.preventDefault();
     setMessage({ text: "", type: "" });
@@ -76,7 +76,7 @@ const Deposit = () => {
     }
   };
 
-  // 🧾 Cheque Deposit Handler
+ 
   const handleChequeDeposit = async (e) => {
     e.preventDefault();
     setMessage({ text: "", type: "" });
@@ -94,9 +94,7 @@ const Deposit = () => {
       formData.append("backCheque", backCheque);
       formData.append("amount", amount);
 
-      const res = await api.post("/cheque-deposit", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const res = await api.post("/cheque-deposit", formData);
 
       if (res.data.success) {
         setMessage({ text: "Cheque deposit successful! Redirecting...", type: "success" });
@@ -119,7 +117,7 @@ const Deposit = () => {
       <h2>Deposit Funds</h2>
       {message.text && <p className={`message ${message.type}`}>{message.text}</p>}
 
-      {/* CARD DEPOSIT */}
+      
       <form className="deposit-form" onSubmit={handleCardDeposit}>
         <h3>Add Debit Card</h3>
         <label>Card Number</label>
@@ -163,7 +161,7 @@ const Deposit = () => {
         </button>
       </form>
 
-      {/* CHEQUE DEPOSIT */}
+      
       <form className="deposit-form" onSubmit={handleChequeDeposit}>
         <h3>Deposit Cheque</h3>
         <p>Endorse the cheque: Write your name on the back and add “For mobile deposit only”.</p>

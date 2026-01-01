@@ -36,7 +36,7 @@ const Dashboard = () => {
 
       let allTransactions = [];
 
-      // 🟢 Internal transactions
+      
       if (internalTxRes.data.success && Array.isArray(internalTxRes.data.transactions)) {
         const formattedInternal = internalTxRes.data.transactions.map((tx) => ({
           ...tx,
@@ -46,7 +46,7 @@ const Dashboard = () => {
         allTransactions.push(...formattedInternal);
       }
 
-      // 🔵 External transactions
+      
       if (externalTxRes.data.success && Array.isArray(externalTxRes.data.transactions)) {
         const formattedExternal = externalTxRes.data.transactions.map((tx) => ({
           ...tx,
@@ -56,14 +56,14 @@ const Dashboard = () => {
         allTransactions.push(...formattedExternal);
       }
 
-      // 🔄 Sort by date
+      
       allTransactions.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-      // 🧩 Keep the latest 4
+      
       setTransactions(allTransactions.slice(0, 4));
 
     } catch (error) {
-      console.error(error);
+      //console.error(error);
       setMessage({
         text: error.response?.data?.message || "Server error",
         type: "error",
@@ -77,7 +77,7 @@ const Dashboard = () => {
     getDashboardData();
   }, []);
 
-  // 🟡 Handle click on transaction
+  
   const handleTransactionClick = (tx) => {
     if (tx.source === "external") {
       navigate(`/external-transaction/${tx._id}`);
@@ -91,7 +91,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {/* ===== Balance Section ===== */}
+      
       <div className="balance">
         <div className="available">
           <div className="avail">
@@ -115,7 +115,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* ===== Recent Transactions ===== */}
+      
       <div className="transactions">
         <h4>Recent Transactions</h4>
         {transactions.length > 0 ? (
@@ -154,7 +154,7 @@ const Dashboard = () => {
         )}
       </div>
 
-      {/* ===== Quick Actions ===== */}
+      
       <div className="banks">
         <div className="us" onClick={() => navigate("/us")}>
           <IoIosContact />

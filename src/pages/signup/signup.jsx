@@ -2,7 +2,6 @@ import React, { useEffect, useReducer, useState } from 'react'
 import "./signup.css"
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import axios from 'axios';
 import api from '../../components/axiosInstance';
 
 const reducer = (state, action) => {
@@ -134,7 +133,7 @@ const Signup = () => {
         setMessage({text: res.data.message, type: "error"})
       }
     } catch (error) {
-      console.error("Signup error:", error);
+      //console.error("Signup error:", error);
       if (error.response && error.response.data?.message){
         setMessage({text: error.response.data.message, type: "error"})
       } else {

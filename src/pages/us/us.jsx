@@ -28,9 +28,9 @@ const Us = () => {
   const [receiverName, setReceiverName] = useState("");
   const [verified, setVerified] = useState(false);
 
-  // 🔥 NEW STATES FOR RESULT MODAL
+  
   const [resultOpen, setResultOpen] = useState(false);
-  const [resultType, setResultType] = useState(""); // "success" | "error"
+  const [resultType, setResultType] = useState(""); 
   const [resultMessage, setResultMessage] = useState("");
 
   const [state, dispatch] = useReducer(reducer, {
@@ -87,12 +87,12 @@ const Us = () => {
       });
 
       if (res.data.success) {
-        // 🔥 OPEN RESULT MODAL
+        
         setResultType("success");
         setResultMessage(res.data.message);
         setResultOpen(true);
 
-        // Reset form
+        
         dispatch({ type: "RESET" });
         setReceiverName("");
         setVerified(false);
@@ -204,7 +204,7 @@ const Us = () => {
           loading={loading}
         />
 
-        {/* 🔥 FULLY FUNCTIONAL RESULT MODAL */}
+        
         <ResultModal
           isOpen={resultOpen}
           type={resultType}

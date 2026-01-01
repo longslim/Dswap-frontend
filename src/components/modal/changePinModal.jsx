@@ -37,7 +37,7 @@ const ChangePinModal = ({ isOpen, onClose }) => {
       setOldPin("");
       setNewPin("");
 
-      // Auto close after success
+      
       setTimeout(() => {
         onClose();
       }, 1500);

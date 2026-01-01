@@ -24,21 +24,21 @@ const Personal = () => {
         <h3>Change PIN</h3>
       </div>
 
-      {/* Create PIN Modal */}
+      
       <CreatePinModal
         isOpen={showCreatePinModal}
         onClose={() => setShowCreatePinModal(false)}
         onSuccess={(data) => {
-          console.log("PIN created", data);
+          //console.log("PIN created", data);
         }}
       />
 
-      {/* Change PIN Modal */}
+      
       <ChangePinModal
         isOpen={showChangePinModal}
         onClose={() => setShowChangePinModal(false)}
         onSuccess={(data) => {
-          console.log("PIN changed", data);
+          //console.log("PIN changed", data);
         }}
       />
     </div>

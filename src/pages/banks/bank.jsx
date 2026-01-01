@@ -14,14 +14,14 @@ const Bank = () => {
   const [showModal, setShowModal] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
-  // 🔗 Step 0: Fetch linked Plaid account if already connected
+  
   const fetchLinkedAccounts = async () => {
     try {
       setRefreshing(true);
       const res = await api.get("/linked-accounts");
 
       if (res.data.success && res.data.accounts.length > 0) {
-        const acc = res.data.accounts[0]; // assuming one account per user
+        const acc = res.data.accounts[0]; 
         setAccount({
           access_token: res.data.access_token || "",
           account_id: acc.account_id,
@@ -54,18 +54,18 @@ const Bank = () => {
     fetchLinkedAccounts();
   }, []);
 
-  // 🏦 Step 1: Create Plaid Link Token
+  
   const createLinkToken = async () => {
     try {
       const res = await api.post("/create-link-token");
       setLinkToken(res.data.link_token);
     } catch (err) {
-      console.error("Link token error:", err);
+      //console.error("Link token error:", err);
       setMessage({ text: "Failed to create link token", type: "error" });
     }
   };
 
-  // 🔄 Step 2: Initialize Plaid Link
+  
   const { open, ready } = usePlaidLink({
     token: linkToken,
     onSuccess: async (public_token, metadata) => {
@@ -87,13 +87,13 @@ const Bank = () => {
           type: "success",
         });
       } catch (err) {
-        console.error("Exchange error:", err);
+        //console.error("Exchange error:", err);
         setMessage({ text: "Failed to link bank account", type: "error" });
       }
     },
   });
 
-  // 💸 Step 3: Submit External Transfer
+ 
   const handleTransfer = async () => {
     if (!account) {
       setMessage({ text: "Please link a bank account first.", type: "error" });
@@ -118,7 +118,7 @@ const Bank = () => {
         setMessage({ text: res.data.msg, type: "error" });
       }
     } catch (err) {
-      console.error(err);
+      //console.error(err);
       setMessage({
         text: err.response?.data?.msg || "Transfer failed. Try again later.",
         type: "error",
@@ -128,7 +128,7 @@ const Bank = () => {
     }
   };
 
-  // ⚙️ Step 4: Open Confirmation Modal
+  
   const handleConfirmModal = (e) => {
     e.preventDefault();
 
@@ -150,7 +150,7 @@ const Bank = () => {
       <div className="external-transfer-card">
         <h2>External Bank Transfer</h2>
 
-        {/* 🏦 Plaid Link Section */}
+        
         {!account && (
           <button
             onClick={linkToken ? open : createLinkToken}
@@ -160,7 +160,7 @@ const Bank = () => {
           </button>
         )}
 
-        {/* 🔄 Refresh Linked Account */}
+        
         {account && (
           <div className="linked-account">
             <p className="linked-info">
@@ -177,7 +177,7 @@ const Bank = () => {
           </div>
         )}
 
-        {/* 💰 Transfer Form */}
+        
         {account && (
           <form onSubmit={handleConfirmModal}>
             <label>Amount</label>
@@ -204,7 +204,7 @@ const Bank = () => {
           </form>
         )}
 
-        {/* 🧾 Confirmation Modal */}
+        
         <ConfirmModal
           isOpen={showModal}
           title="Confirm Transfer"
@@ -216,7 +216,7 @@ const Bank = () => {
           loading={loading}
         />
 
-        {/* 🗯️ Feedback Message */}
+        
         {message.text && (
           <p className={`message ${message.type}`}>{message.text}</p>
         )}

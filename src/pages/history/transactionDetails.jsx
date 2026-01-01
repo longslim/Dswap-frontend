@@ -13,13 +13,13 @@ const TransactionDetails = ({ user }) => {
   useEffect(() => {
     const fetchTransaction = async () => {
       try {
-        // Try internal first
+        
         let res = await api.get(`/transactions/${id}`);
         if (res.data.success) {
           setTransaction(res.data.transaction);
           setIsExternal(false);
         } else {
-          // Fallback to external
+          
           res = await api.get(`/external-transaction/${id}`);
           if (res.data.success) {
             setTransaction(res.data.transaction);
@@ -29,7 +29,7 @@ const TransactionDetails = ({ user }) => {
           }
         }
       } catch (error) {
-        // Try external if internal failed
+        
         try {
           const res = await api.get(`/external-transaction/${id}`);
           if (res.data.success) {

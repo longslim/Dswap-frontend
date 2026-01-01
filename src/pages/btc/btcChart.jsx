@@ -17,7 +17,7 @@ const BtcChart = () => {
     try {
       const res = await api.get("/ohlc");
 
-      // Convert OHLC candles → simple line data (using close price)
+      
       const formatted = res.data.map((candle) => ({
         time: new Date(candle.time).toLocaleTimeString([], {
           hour: "2-digit",
@@ -28,7 +28,7 @@ const BtcChart = () => {
 
       setData(formatted);
     } catch (err) {
-      console.error("BTC Chart Fetch Error:", err);
+      //console.error("BTC Chart Fetch Error:", err);
     }
   };
 

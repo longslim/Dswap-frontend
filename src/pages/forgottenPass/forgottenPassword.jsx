@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react'
 import "./forgottenPassword.css"
 import { NavLink, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import api from '../../components/axiosInstance'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -32,10 +32,8 @@ const ForgottenPassword = () => {
     setLoading(true)
 
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/submitted-email", {
+      const res = await api.post("/submitted-email", {
         email: state.email
-      }, {
-        headers: { 'Content-Type': 'application/json' }
       })
 
       if (res.data.success) {
@@ -45,7 +43,7 @@ const ForgottenPassword = () => {
         setMessage({ text: res.data.message, type: "error" })
       }
     } catch (error) {
-      console.error("Forgotten password error:", error)
+      //console.error("Forgotten password error:", error)
       if (error.response && error.response.data?.message) {
         setMessage({ text: error.response.data.message, type: "error" })
       } else {

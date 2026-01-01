@@ -17,7 +17,7 @@ const BtcWithdraw = () => {
   const [message, setMessage] = useState("");
   const [inputMode, setInputMode] = useState("BTC");
 
-  // 🔥 NEW STATES FOR MODALS
+  
   const [showModal, setShowModal] = useState(false);
   const [resultOpen, setResultOpen] = useState(false);
   const [resultType, setResultType] = useState("success");
@@ -94,7 +94,7 @@ const BtcWithdraw = () => {
     setInputMode("USD");
   };
 
-  // 🔥 Handle "Submit Withdrawal" → open modal instead of sending request
+  
   const submit = () => {
     const btcNum = btcAmount === "" ? 0 : Number(btcAmount);
 
@@ -114,7 +114,7 @@ const BtcWithdraw = () => {
     setShowModal(true);
   };
 
-  // 🔥 Handle Confirm Modal Submission
+  
   const handleConfirmTransfer = async () => {
     setLoading(true);
 
@@ -228,7 +228,7 @@ const BtcWithdraw = () => {
 
       <button onClick={submit}>Submit Withdrawal</button>
 
-      {/* 🔥 Confirm Modal */}
+      
       <ConfirmModal
         isOpen={showModal}
         title="Confirm Withdrawal"
@@ -240,7 +240,7 @@ const BtcWithdraw = () => {
         loading={loading}
       />
 
-      {/* 🔥 Result Modal */}
+      
       <ResultModal
         isOpen={resultOpen}
         type={resultType} 

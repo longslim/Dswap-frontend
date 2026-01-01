@@ -13,17 +13,17 @@ const BtcDeposit = () => {
   const [copied, setCopied] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
-  // Get BTC price
+  
   const getPrice = async () => {
     try {
       const res = await api.get("/price");
       setPrice(res.data.bitcoin.usd);
     } catch (err) {
-      console.error(err);
+      //console.error(err);
     }
   };
 
-  // Generate deposit address
+  
   const createDepositAddress = async () => {
     try {
       setLoading(true);
@@ -31,24 +31,24 @@ const BtcDeposit = () => {
       setDepositAddress(res.data.depositAddress);
       setReferenceId(res.data.referenceId);
     } catch (err) {
-      console.error(err.response?.data || err);
+      //console.error(err.response?.data || err);
     } finally {
       setLoading(false);
     }
   };
 
-  // Get user BTC balance
+  
   const getBalance = async () => {
     try {
       const res = await api.get("/balances");
       const bal = res.data.balances?.btc || 0;
       setBalance(bal);
     } catch (err) {
-      console.error(err);
+      //console.error(err);
     }
   };
 
-  // Auto-update every 5 sec
+  
   useEffect(() => {
     const interval = setInterval(() => {
       getBalance();
@@ -62,7 +62,7 @@ const BtcDeposit = () => {
     createDepositAddress();
   }, []);
 
-  // Copy function
+  
   const copyAddress = () => {
     navigator.clipboard.writeText(depositAddress);
     setCopied(true);
@@ -74,7 +74,7 @@ const BtcDeposit = () => {
     setUsdEquivalent(usd);
   }, [balance, price]);
 
-  // Manual refresh button
+ 
   const manualRefresh = async () => {
     setRefreshing(true);
     await getBalance();

@@ -65,7 +65,7 @@ const AdminDashboard = () => {
     fetchBtcStats();
   }, []);
 
-  // Fetch profile
+  
   const fetchProfile = async () => {
     try {
       const res = await api.get("/admin-profile");
@@ -77,12 +77,12 @@ const AdminDashboard = () => {
         password: "",
       });
     } catch (err) {
-      console.error(err);
+      //console.error(err);
       setMessage({ text: "Failed to load profile", type: "error" });
     }
   };
 
-  // Fetch all users
+  
   const fetchAllUsers = async () => {
     try {
       setLoading(true);
@@ -98,7 +98,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // Fetch all transactions
+  
   const fetchTransactions = async () => {
     try {
       const res = await api.get("/admin-transactions");
@@ -111,7 +111,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // Fetch all pending cheque deposits
+  
   const fetchPendingDeposits = async () => {
     try {
       setLoading(true);
@@ -122,8 +122,8 @@ const AdminDashboard = () => {
         setMessage({ text: "Failed to fetch deposits", type: "error" });
       }
     } catch (err) {
-      console.error(err);
-      setMessage({ text: "Server error", type: "error" });
+      //console.error(err);
+      setMessage({ text: err.response?.data?.message || "Server error", type: "error" });
     } finally {
       setLoading(false);
     }
@@ -135,7 +135,7 @@ const AdminDashboard = () => {
       const res = await api.get("/admin-stats")
       setBtcStats(res.data)
     } catch (err) {
-      console.error(err)
+      //console.error(err)
       setMessage({text: "Failed to load BTC stats", type: "error"})
     } finally{
       setBtcLoading(false)
@@ -149,7 +149,8 @@ const AdminDashboard = () => {
       await api.post(`/admin/withdraw/${id}/process`)
       await fetchBtcStats()
     } catch (err) {
-      alert(err?.response.data?.message || "Process failed")
+      //alert(err?.response.data?.message || "Process failed")
+      setMessage({text: err.response?.data?.message || "Process failed", type: "error"})
     } finally {
       setBtcActionLoading(null)
     }
@@ -162,13 +163,14 @@ const AdminDashboard = () => {
       await api.post(`/admin/withdraw/${id}/reject`)
       await fetchBtcStats()
     } catch (err) {
-      alert(err?.response?.data?.message || "Reject failed")
+      //alert(err?.response?.data?.message || "Reject failed")
+      setMessage({text: err.response?.data?.message || "Reject failed", type: "error"})
     } finally {
       setBtcActionLoading(null)
     }
   }
 
-  // Create new admin
+  
   const handleCreateAdmin = async (e) => {
     e.preventDefault();
     try {
@@ -187,7 +189,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // Update admin profile
+  
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
@@ -205,7 +207,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // Approve cheque deposit
+  
   const handleApprove = async (id) => {
     try {
       setProcessing(true);
@@ -215,14 +217,14 @@ const AdminDashboard = () => {
         fetchPendingDeposits();
       }
     } catch (err) {
-      console.error(err);
+      //console.error(err);
       setMessage({ text: "Failed to approve deposit", type: "error" });
     } finally {
       setProcessing(false);
     }
   };
 
-  // Reject cheque deposit
+  
   const handleReject = async (id) => {
     const reason = window.prompt("Enter rejection reason (optional)");
     if (reason === null) return;
@@ -254,7 +256,8 @@ const AdminDashboard = () => {
       setLoans(res.data.loans)
       setLoading(false)
     } catch (err) {
-      console.log("Fetch loans error:", err)
+      //console.log("Fetch loans error:", err)
+      setMessage({text: err.response?.data?.message || "Failed to fetch loans", type: "error"})
       setLoading(false)
     }
   }
@@ -266,7 +269,7 @@ const AdminDashboard = () => {
       fetchLoans();
       setMessage({text: "BTC payment verified successfully", type: "success"})
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Failed to verify BTC payment", type: "error" })
     }
   };
@@ -278,7 +281,7 @@ const AdminDashboard = () => {
       fetchLoans();
       setMessage({text: "Loan approved successfully", type: "success"})
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Failed to approve loan", type: "error" })
     }
   };
@@ -290,7 +293,7 @@ const AdminDashboard = () => {
       fetchLoans();
       setMessage({text: "Loan rejected successfully", type: "success"})
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Failed to reject loan", type: "error" })
     }
   };
@@ -309,7 +312,7 @@ const AdminDashboard = () => {
       setSending(false);
       setMessage({text: "Message sent to user successfully", type: "success"})
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setSending(false);
       setMessage({ text: "Failed to send message", type: "error" })
     }
@@ -323,7 +326,7 @@ const AdminDashboard = () => {
       const res = await api.get("/allPending");
       setUtility(res.data.pending || []);
     } catch (err) {
-      console.log("Fetch utility error:", err);
+      //console.log("Fetch utility error:", err);
       setMessage({ text: "Failed to fetch utilities", type: "error" });
     } finally {
       setLoading(false);
@@ -339,7 +342,7 @@ const AdminDashboard = () => {
       setMessage({ text: "Bill payment approved", type: "success" });
       fetchUtility();
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Failed to approve bill payment", type: "error" });
     } finally {
       setProcessing(false);
@@ -356,7 +359,7 @@ const AdminDashboard = () => {
       setMessage({ text: "Bill payment rejected", type: "success" });
       fetchUtility();
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setMessage({ text: "Failed to reject bill payment", type: "error" });
     } finally {
       setProcessing(false);
@@ -397,7 +400,7 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* Dashboard */}
+      
       {activeTab === "dashboard" && (
         <>
           <section className="create-admin-section">
@@ -467,7 +470,7 @@ const AdminDashboard = () => {
         </>
       )}
 
-      {/* Profile */}
+      
       {activeTab === "profile" && admin && (
         <section className="admin-profile-section">
           <h3>My Profile</h3>
@@ -507,7 +510,7 @@ const AdminDashboard = () => {
         </section>
       )}
 
-      {/* Transactions */}
+      
       {activeTab === "transactions" && (
         <section className="admin-transactions-section">
           <h3>All Transactions</h3>
@@ -540,7 +543,7 @@ const AdminDashboard = () => {
         </section>
       )}
 
-      {/* Cheque Deposits */}
+      
       {activeTab === "cheques" && (
         <section className="pending-deposits-section">
           <h3>Pending Cheque Deposits</h3>
@@ -645,7 +648,7 @@ const AdminDashboard = () => {
       )}
 
 
-      {/* LOANS TAB */}
+      
       {activeTab === "loans" && (
         <section className="loan-management-section">
           <h3>Loan Applications</h3>
@@ -675,7 +678,7 @@ const AdminDashboard = () => {
                     <td>{loan.status}</td>
 
                     <td>
-                      {/* VERIFY BTC */}
+                      
                       {(loan.status === "awaiting-btc" ||
                         loan.status === "processing"
                       ) && (
@@ -687,7 +690,7 @@ const AdminDashboard = () => {
                         </button>
                       )}
 
-                      {/* APPROVE LOAN */}
+                     
                       {loan.status === "processing" && (
                         <button
                           onClick={() => handleApproveLoan(loan._id)}
@@ -697,7 +700,7 @@ const AdminDashboard = () => {
                         </button>
                       )}
 
-                      {/* REJECT LOAN */}
+                      
                       {(loan.status === "awaiting-btc" ||
                         loan.status === "processing") && (
                         <button
@@ -708,7 +711,7 @@ const AdminDashboard = () => {
                         </button>
                       )}
 
-                      {/* SEND MESSAGE */}
+                      
                       <button
                         className="message-btn"
                         onClick={() => setSelectedLoan(loan)}
@@ -722,7 +725,7 @@ const AdminDashboard = () => {
             </table>
           )}
 
-          {/* MESSAGE POPUP */}
+          
           {selectedLoan && (
             <div className="loan-message-popup">
               <h4>Send Message to: {selectedLoan.user.firstname}</h4>
